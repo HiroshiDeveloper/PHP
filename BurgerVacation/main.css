@@ -1,0 +1,116 @@
+/* common */
+.rightText{
+	text-align: right;
+}
+
+.leftText{
+	text-align: left;
+}
+
+.centerText{
+	text-align: center;
+}
+
+.component{
+	margin-top: 5px;
+}
+
+.right{
+	float: right;
+}
+
+.left{
+	float: left;
+}
+
+/* header */
+.list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.list li {
+	margin: 0;
+	padding: 0 0 0 10px;
+	float: right;
+	font-size: 12px;
+}
+
+.headerList{
+	background-color: #FC8E42;
+}
+
+.logo{
+	width: 100px;
+	height: 100px;
+}
+
+.header_content{
+	padding: 10px;
+}
+
+/* featured product */
+.featuredProduct{
+	/*width:320px;*/
+	/*width: 100%;*/
+	background-color: rgba(0, 0, 0, 0.9);
+}
+
+/*.header{
+	background-image: url("img/bacon.jpg");
+	background-size:40% auto;
+}*/
+
+.fp_table{
+	margin-bottom: 0px;
+}
+
+.fp_margin{
+	margin-right: 0px;
+	margin-left: 0px;
+}
+
+#fp_burgerName{
+	color: #FC8E42;
+}
+
+#fp_burgerEXP{
+	color: #FFF;
+}
+
+#show1{
+	position:absolute;
+	width: 320px;
+	height: 240px;
+}
+
+#show2{
+	width: 320px;
+	height: 240px;
+}
+
+.fadeout{
+opacity: 0;
+transition: 3s ease-in-out;
+-webkit-transition: 3s ease-in-out;
+}
+
+.fadein{
+opacity: 1;
+transition: 3s ease-in-out;
+-webkit-transition: 3s ease-in-out;
+}
+
+
+/* main */
+.display{
+	height: 400px;
+	position: relative
+}
+
+.display #humburger{
+	position: absolute;
+    right: 0;
+    bottom: 0;
+}
