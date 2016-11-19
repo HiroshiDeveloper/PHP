@@ -23,7 +23,7 @@
 	<div class="header">
 		<div class="header_content">
 			<ul class="list">
-				<li data-toggle="modal" data-target="#modal-signUp"><a href="#">SIGN UP</a></li>
+				<li data-toggle="modal" data-target="#modal-signUp"><a href=".footer">SIGN UP</a></li>
 				<li>|</li>
 				<li data-toggle="modal" data-target="#modal-myAccout"><a href="#">MY ACCOUNT</a></li>
 				<li>|</li>
@@ -146,27 +146,31 @@
 	<div class="footer">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-7">
+				<div class="col-sm-7">
 					<h3>Sign Up</h3>
 					<form class="form-horizontal" role="form" action="regist.php" method="post">
-						<div class="form-group">
-							<div class="row formInput">
+						<div class="form-group formInput">
+							<div class="row">
 								<div class="col-xs-6">
 									<!-- username -->
+									<span class="glyphicon glyphicon-user"><label>User Name</label></span>
 									<input type="text" class="form-control" placeholder="User Name">
 								</div>
 								<div class="col-xs-6">
 									<!-- Phone Number -->
-									<input type="tel" class="form-control" placeholder="Phone Number">
+									<span class="glyphicon glyphicon-phone"><label>Phone Number</label></span>
+									<input type="tel" class="form-control" placeholder="e.g.)604842****">
 								</div>
-							</div>
-							<div class="row formInput">
+							</div><br/>
+							<div class="row">
 								<div class="col-xs-6">
-									<!-- email -->
-									<input type="email" class="form-control" placeholder="Email">
+									<!-- username -->
+									<span class="glyphicon glyphicon-envelope"><label>Email</label></span>
+									<input type="email" class="form-control" placeholder="e.g.)sample@gmial.com">
 								</div>
 								<div class="col-xs-6">
 									<!-- password -->
+									<span class="glyphicon glyphicon-lock"><label>Password</label></span>
 									<input type="password" class="form-control" placeholder="Password">
 								</div>
 							</div>
@@ -177,13 +181,13 @@
 						</div>
 					</form>
 				</div>
-				<div class="col-md-5">
+				<div class="col-sm-5">
 					<h3>Location</h3>
-					<span class="glyphicon glyphicon-phone"><label> 604-620-1111</label></span></br>
-					<span class="glyphicon glyphicon-map-marker"><label> 609 West Hastings St., Vancouver BC</label></span></br>
 					<div class="centerText">
 						<div id="map_canvas"></div>
 					</div>
+					<span class="glyphicon glyphicon-phone"><label> 604-620-1111</label></span></br>
+					<span class="glyphicon glyphicon-map-marker"><label> 609 WestHastings St, Vancouver BC</label></span></br>
 				</div>
 			</div>
 		</div>
