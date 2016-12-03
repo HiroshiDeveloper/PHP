@@ -1,4 +1,5 @@
 <?php
+	require "myAccountBtn.php";
 	require "signUpBtn.php";
 ?>
 
@@ -31,12 +32,10 @@
 			<li data-toggle="modal" data-target="#modal-signUp"><a href="#signUp">SIGN UP</a></li>
 			<li>|</li>
 			<li data-toggle="modal" data-target="#modal-myAccout"><a href="#">MY ACCOUNT</a></li>
-			<li>|</li>
-			<li><a href="#">WISHLIST</a></li>
-		</ul>
+		</ul><br/>
 		<div class="row">
 			<div class="col-xs-4">
-				<img src="img/logo.jpg" class="img-rounded logo" alt="BurgerVacation Logo">
+				<img src="img/logo.png" class="img-rounded logo" alt="BurgerVacation Logo">
 			</div>
 			<div class="col-xs-8 rightText">
 				<!-- <br/>
@@ -62,26 +61,28 @@
 				</button>
 				<h4 class="modal-title" id="modal-label">Your Account</h4>
 			</div>
+
 			<!-- modal body -->
 			<div class="modal-body">
-				<form class="form-horizontal" role="form">
+				<form class="form-horizontal" role="form" action="" method="post">
 					<!-- username -->
 					<div class="form-group">
 						<label class="col-sm-3 control-label">User Name</label>
 						<div class="col-sm-9">
-							<input type="text" class="form-control" placeholder="User Name">
+							<input type="text" class="form-control" placeholder="User Name" name="userName">
 						</div>
 					</div>
 					<!-- password -->
 					<div class="form-group">
 						<label class="col-sm-3 control-label">Password</label>
 						<div class="col-sm-9">
-							<input type="password" class="form-control" placeholder="Password">
+							<input type="password" class="form-control" placeholder="Password" name="password">
 						</div>
 					</div>
+					<?php echo $errorAccountMsg ?>
 					<div class="rightText">
-						<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-						<button type="submit" class="btn btn-primary">Submit</button>
+						<button type="button" class="btn btn-default" data-dismiss="modal">Forgot your password?</button>
+						<button type="submit" id="myAccountBtn" class="btn btn-primary">Submit</button>
 					</div>
 				</form>
 			</div>
@@ -144,6 +145,7 @@
 </div>
 
 <div class="rightText display">
+	<img id="lettuce" src="img/lettuce.jpg" alt="Lettuce"> 
 	<img id="humburger" src="img/hamburger.jpg" alt="BurgerVacation"><br/>
 </div></br>
 

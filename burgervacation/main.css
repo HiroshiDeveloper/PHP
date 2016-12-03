@@ -28,13 +28,30 @@
 	list-style: none;
 	margin: 0;
 	padding: 0;
+	color : #FFF;
 }
 
 .list li {
 	margin: 0;
 	padding: 0 0 0 10px;
 	float: right;
-	font-size: 12px;
+	font-size: 30px;
+}
+
+.list li a:link {
+	color: #FFF;
+}
+
+.list li a:visited {
+	color: #FFF;
+}
+
+.list li a:hover {
+	color: #FC8E42;
+}
+
+.list li a:active {
+	color: #FFF;
 }
 
 .headerList{
@@ -42,8 +59,22 @@
 }
 
 .logo{
-	width: 100px;
+	width: 200px;
 	height: 100px;
+}
+
+.header{
+	height: 350px;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+ 	background: url(img/header4.jpg);
+    	
+	-moz-background-size:cover;
+	background-size: cover;
+	/*
+	background: url(img/header1.jpg);
+	background-size: 100% auto;
+	*/
 }
 
 .header_content{
@@ -106,7 +137,15 @@
 /* main */
 .display{
 	height: 400px;
-	position: relative
+	position: relative;
+}
+
+.display #lettuce{
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	height: 100px;
+	width: 150px;
 }
 
 .display #humburger{

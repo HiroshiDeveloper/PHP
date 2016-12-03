@@ -1,14 +1,20 @@
 <?php
 require "../../mysql.php";
 
+$userName = '';
+$phoneNumber = '';
+$email = '';
+$password = '';
+$date = '';
+$errorMessage ='';
+$successMessage = '';
+
 if (isset($_POST["signUpBtn"])) {
-	
 	$userName = $_POST['userName'];
         $phoneNumber = $_POST['phoneNumber'];
         $email = $_POST['email'];
 	$password = $_POST['password'];
 	$date = date("Y/m/d");
-        $errorMessage ='';
         $flg = 0;
 
         if (empty($userName)) {
