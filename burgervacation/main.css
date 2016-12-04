@@ -67,7 +67,7 @@
 	height: 350px;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
- 	background: url(img/header4.jpg);
+ 	background: url("img/header4.jpg");
     	
 	-moz-background-size:cover;
 	background-size: cover;
@@ -79,6 +79,24 @@
 
 .header_content{
 	padding: 10px;
+}
+
+#account{
+	visibility:hidden;
+	margin-top:5px;
+	margin-left:5px;
+}
+
+#myAccountBtn{
+	margin-bottom:5px;
+	background-color:#FC8E42;
+	border-color:#FC8E42;
+}
+
+#removeIcon{
+	font-size:30px;
+	color:#FC8E42;
+	margin-bottom:5px;
 }
 
 /* featured product */
@@ -162,6 +180,16 @@
 
 .footer h3{
 	color: #FC8E42;
+}
+
+#signUpBtn{
+	background-color:#FC8E42;
+	border-color:#FC8E42;
+}
+
+#signUpMessage{
+	color:#FC8E42;
+	font-size:20px;
 }
 
 #map_canvas{
