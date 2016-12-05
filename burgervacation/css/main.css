@@ -64,10 +64,10 @@
 }
 
 .header{
-	height: 350px;
+	height: 370px;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
- 	background: url("img/header4.jpg");
+ 	background: url("../img/header4.jpg");
     	
 	-moz-background-size:cover;
 	background-size: cover;
@@ -82,7 +82,10 @@
 }
 
 #account{
+	/*
 	visibility:hidden;
+	*/
+	display:none;
 	margin-top:5px;
 	margin-left:5px;
 }
@@ -91,6 +94,16 @@
 	margin-bottom:5px;
 	background-color:#FC8E42;
 	border-color:#FC8E42;
+}
+
+#myAccountErrorMessage{
+	color:#FA1E3B;
+	font-size:20px;
+}
+
+#myAccountSuccessMessage{
+	color:#1EFA51;
+	font-size:20px;
 }
 
 #removeIcon{
@@ -187,8 +200,19 @@
 	border-color:#FC8E42;
 }
 
+/*
 #signUpMessage{
 	color:#FC8E42;
+	font-size:20px;
+}
+*/
+#signUpErrorMessage{
+	color:#FA1E3B;
+	font-size:20px;
+}
+
+#signUpSuccessMessage{
+	color:#1EFA51;
 	font-size:20px;
 }
 
