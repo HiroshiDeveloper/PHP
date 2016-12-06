@@ -17,8 +17,17 @@ if (empty($_POST["password"])) {
 }
 if($flg == 0){
 	try{
-		$pdo -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		$stmt = $pdo -> prepare("SELECT FROM users WHERE userName=:userName and password=:password");
+		$selectSql = "SELECT * FROM users WHERE userName='".$userName."'". "and ". "password='".$password."'";
+		$data = $pdo->query($selectSql);
+		error_log($selectSql);
+		if(empty($data)){
+			echo '1'.','.'Please check user name and password again';
+			return;
+		}
+
+		error_log('Success');
+		$dataFetch = $data->fetch();
+		echo '0'.','.'Welocome to '.$dataFetch['userName'];
 
 	}catch(PDOException $e){
 		header('Content-Type: text/plain; charset=UTF-8', true, 500);

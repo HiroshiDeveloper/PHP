@@ -31,17 +31,17 @@ if($flg == 0){
 	$pass = "danielpowter";
 	try{
 
-		error_log("###DATATEST0###");
-		$checkSql = "SELECT FROM users WHERE userName=".$userName." and password=".$password;
-		error_log("###DATATEST1###");
+		$checkSql = "SELECT * FROM users WHERE userName='".$userName."'";
 		$data = $pdo->query($checkSql);
-		error_log("###DATATEST###");
+		
+		/* DATA TEST
 		foreach($data as $dt){
-			error_log($dt);
+			error_log($dt['userName']." : ".$dt['date']);
 		}
+		*/
+
 		if(!empty($data)){ 
-			error_log("###DATA###");
-			echo '2'.'The user name is taken';
+			echo '1'.','.'The user name is taken';
 			return;
 		}
 		

@@ -23,6 +23,10 @@
 	float: left;
 }
 
+.marginBottom{
+	margin-bottom:5px;
+}
+
 /* header */
 .list {
 	list-style: none;
@@ -102,8 +106,8 @@
 }
 
 #myAccountSuccessMessage{
-	color:#1EFA51;
-	font-size:20px;
+	color:#FFF;
+	font-size:30px;
 }
 
 #removeIcon{
