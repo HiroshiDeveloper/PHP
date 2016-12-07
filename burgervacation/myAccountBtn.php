@@ -7,6 +7,8 @@ $password = $_POST['password'];
 $flg = 0;
 $message = '';
 
+error_log("test####################");
+
 if (empty($userName)) {
 	$message = $message . '"User Name" ';
 	$flg = -1;

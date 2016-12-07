@@ -85,10 +85,14 @@
 
 <!-- main -->
 <div class="left">
+	<form id="menuForm" name="menuForm" class="form-horizontal" role="form" method="post" action="">
 	<ul id="flip" class="dropmenu">
-		<li><a href="#">Burgers</a>
+		<li><a href="javascript:void(0)">Burgers</a>
 			<ul>
-			    <li><a href="#">Cheese</a></li>
+			    <!--
+			    <li><a href="javascript:void(0)" onclick="document.formMenu.submit(test());return false;">Cheese</a></li>
+			    -->
+			    <li><a href="javascript:void(0)" class="formSubmit" value="Cheese">Cheese</a></li>
 			    <li><a href="#">Double</a></li>
 			    <li><a href="#">Teriyaki</a></li>
 			    <li><a href="#">Vage</a></li>
@@ -116,6 +120,12 @@
 		    </ul>
 		</li>
 	</ul>
+	<!-- hidden data -->
+	<div class="hidden">
+		<input type=hidden name="menu" value="">
+		<input type=submit>
+	</div>
+	</form>
 </div>
 
 <div class="rightText display">
