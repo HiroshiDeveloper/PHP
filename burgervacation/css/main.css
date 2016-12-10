@@ -31,7 +31,25 @@
 	display: none;
 }
 
+/* navi */
+.navi{
+	height:50px;
+	background-color: rgba(0, 0, 0, 0.9);
+}
+
 /* header */
+/*
+.bgHeader{
+	background-color: #E97423;
+	border-radius: 0.5em;	
+}
+*/
+/*
+.bgHeader{
+	background-color: rgba(0, 0, 0, 0.9);
+}
+*/
+
 .list {
 	list-style: none;
 	margin: 0;
@@ -40,10 +58,10 @@
 }
 
 .list li {
-	margin: 0;
-	padding: 0 0 0 10px;
+	margin: 10px;
+	padding:3px;
 	float: right;
-	font-size: 30px;
+	font-size: 15px;
 }
 
 .list li a:link {
@@ -95,7 +113,8 @@
 	*/
 	display:none;
 	margin-top:5px;
-	margin-left:5px;
+	margin-left:15px;
+	width:40%;
 }
 
 #myAccountBtn{
@@ -132,8 +151,12 @@
 	background-size:40% auto;
 }*/
 
-.fp_table{
+.fpTable{
 	margin-bottom: 0px;
+}
+
+#fpImage{
+	width:330px;
 }
 
 .fp_margin{
@@ -172,7 +195,6 @@
 	-webkit-transition: 3s ease-in-out;
 }
 
-
 /* main */
 .display{
 	height: 400px;
@@ -185,12 +207,38 @@
 	bottom: 0;
 	height: 100px;
 	width: 150px;
+	z-index: -1;
 }
 
 .display #humburger{
 	position: absolute;
     	right: 0;
     	bottom: 0;
+	z-index: -1;
+}
+
+#tableMenu{
+	width: 60%;
+}
+
+#tableMenu caption{
+	font-weight: bold;
+}
+
+#tableMenu label{
+	text-align: left;
+}
+
+#tableMenu td{
+	text-align: left;
+}
+
+#tableMenu th{
+	text-align: center;
+}
+
+#tableMenu td:hover{
+	color: #E97423;
 }
 
 /* footer */
@@ -201,6 +249,10 @@
 
 .footer h3{
 	color: #FC8E42;
+}
+
+.footerExp{
+	font-size: 15px;
 }
 
 #signUpBtn{
@@ -234,10 +286,65 @@
 }
 
 @media only screen and (max-width: 768px){
-
+	.logo{
+	  	width: 180px;
+	 	height: 90px;
+	}
 }
 
 @media only screen and (max-width: 480px){
+	.logo{
+		width: 130px;
+		height: 65px;
+	}
+
+	.navi{
+		height:30px;
+	}
+
+	.list li {
+		margin: 5px;
+		padding:2px;
+		font-size: 13px;
+	}
+
+	#account{
+		width:60%;
+	}
+
+	.fpTable tr{
+		display: block;
+		margin-bottom: 1.5em;
+	}
+
+	.fpTable th, .fpTable td{
+		display: list-item;
+    		border: none;
+	}
+
+	#fpImage{
+	        width: 150px;
+	}
+
+	#show1{
+		width: 260px;
+		height: 195px;
+	}
+
+	#show2{
+		width: 260px;
+		height: 195px;
+	}
+
+	.display #humburger{
+		display: none;		
+	}
+
+	#tableMenu{
+		margin-left: 5px;
+	        width: 40%;
+	}
+
 
 }
 

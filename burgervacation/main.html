@@ -24,13 +24,23 @@
 <body onload="initialize();">
 
 <!-- navi -->
+<div class="navi">
+	<ul class="list">
+		<li><a href="#signUp">SIGN UP</a></li>
+		<li> | </li>
+		<li onclick="display(0)" class="bgHeader"><a href="#">MY ACCOUNT</a></li>
+	</ul>
+</div>
+
 <div class="header">
 	<div class="header_content">
+		<!--	
 		<ul class="list">
-			<li><a href="#signUp">SIGN UP</a></li>
-			<li>|</li>
-			<li onclick="display(0)"><a href="#">MY ACCOUNT</a></li>
+			<li class="bgHeader"><a href="#signUp">SIGN UP</a></li>
+			<li onclick="display(0)" class="bgHeader"><a href="#">MY ACCOUNT</a></li>
 		</ul><br/>
+		-->
+		
 		<div class="row">
 			<div class="col-xs-4">
 				<img src="img/logo.png" class="img-rounded logo" alt="BurgerVacation Logo">
@@ -39,7 +49,9 @@
 			</div>
 		</div>
 		<div class="row aniview" av-animation="fadeInDown" id="account">
+			<!--
 			<div class="col-xs-5">
+			-->
 				<span class="glyphicon glyphicon-remove-circle right" id="removeIcon" onclick="display(1)"></span>
 				<form id="myAccountForm" class="form-horizontal" role="form" action="" method="post">
 					<div class="form-group">
@@ -53,10 +65,12 @@
 						<button type="button" class="btn btn-default">Send your password?</button>
 					</div>
 				</form>
+			<!--
 			</div>
 			<div class="col-xs-7">
 			</div>
-		</div>
+			-->
+		</div><br/>
 		<div><font id="myAccountErrorMessage"></font></div>
 		<div >
 			<font id="myAccountSuccessMessage"></font>
@@ -67,10 +81,10 @@
 <!-- featured products -->
 <div class="featuredProduct">
 	<!-- <div class="container fp_margin"> -->
-	<table class="table fp_table">
+	<table class="table fpTable">
 		<tbody>
 			<tr>
-				<td style="width:330px">
+				<td id="fpImage">
 					<img src="img/fp_burger1.png" id="show1" class="fadeout">
 					<img src="img/fp_burger2.png" id="show2" class="fadein">
 				</td>
@@ -86,49 +100,86 @@
 <!-- main -->
 <div class="left">
 	<form id="menuForm" name="menuForm" class="form-horizontal" role="form" method="post" action="">
-	<ul id="flip" class="dropmenu">
-		<li><a href="javascript:void(0)">Burgers</a>
-			<ul>
-			    <!--
-			    <li><a href="javascript:void(0)" onclick="document.formMenu.submit(test());return false;">Cheese</a></li>
-			    -->
-			    <li><a href="javascript:void(0)" class="formSubmit" value="Cheese">Cheese</a></li>
-			    <li><a href="#">Double</a></li>
-			    <li><a href="#">Teriyaki</a></li>
-			    <li><a href="#">Vage</a></li>
-		    </ul>
-		</li>
-		<li><a href="#">Fries</a>
-			<ul>
-			    <li><a href="#">Poutine</a></li>
-			    <li><a href="#">Onion</a></li>
-			    <li><a href="#">Normal</a></li>
-		    </ul>
-		</li>
-		<li><a href="#">Drink</a>
-			<ul>
-			    <li><a href="#">Coke</a></li>
-			    <li><a href="#">Coffee</a></li>
-			    <li><a href="#">Orange</a></li>
-			    <li><a href="#">Milk</a></li>
-		    </ul>
-		</li>
-		<li><a href="#">Salad</a>
-			<ul>
-			    <li><a href="#">Avocado</a></li>
-			    <li><a href="#">Seafood</a></li>
-		    </ul>
-		</li>
-	</ul>
-	<!-- hidden data -->
-	<div class="hidden">
-		<input type=hidden name="menu" value="">
-		<input type=submit>
-	</div>
+		<ul id="flip" class="dropmenu">
+			<li><a href="javascript:void(0)">Burgers</a>
+				<ul>
+			    		<li><a href="javascript:void(0)" class="formSubmit" value="Cheese">Cheese</a></li>
+			    		<li><a href="javascript:void(0)" class="formSubmit" value="Double">Double</a></li>
+			    		<li><a href="javascript:void(0)" class="formSubmit" value="Teriyaki">Teriyaki</a></li>
+			    		<li><a href="javascript:void(0)" class="formSubmit" value="Vege">Vage</a></li>
+		    		</ul>
+			</li>
+			<li><a href="javascript:void(0)">Fries</a>
+				<ul>
+			    		<li><a href="javascript:void(0)" class="formSubmit" value="Poutine">Poutine</a></li>
+			    		<li><a href="javascript:void(0)" class="formSubmit" value="Onion">Onion</a></li>
+			    		<li><a href="javascript:void(0)" class="formSubmit" value="Normal">Normal</a></li>
+		    		</ul>
+			</li>
+			<li><a href="javascript:void(0)">Drink</a>
+				<ul>
+			    		<li><a href="javascript:void(0)" class="formSubmit" value="Coke">Coke</a></li>
+			    		<li><a href="javascript:void(0)" class="formSubmit" value="Coffee">Coffee</a></li>
+			    		<li><a href="javascript:void(0)" class="formSubmit" value="Orange">Orange</a></li>
+			    		<li><a href="javascript:void(0)" class="formSubmit" value="Milk">Milk</a></li>
+		      		</ul>
+			</li>
+			<li><a href="javascript:void(0)">Salad</a>
+				<ul>
+			    		<li><a href="javascript:void(0)" class="formSubmit" value="Avocado">Avocado</a></li>
+			    		<li><a href="javascript:void(0)" class="formSubmit" value="Seafood">Seafood</a></li>
+		    		</ul>
+			</li>
+			<li><a href="javascript:void(0)" onclick="tableMenuShow()">Menu</a></li>
+		</ul>
+		<!-- hidden data -->
+		<div class="hidden">
+			<input id="menu" type=hidden name="menu" value="">
+			<input id="menuBtn" type=submit>
+		</div>
 	</form>
 </div>
 
 <div class="rightText display">
+	<div class="container" id="tableMenu">
+		<table class="table">
+			<caption>Menu</caption>
+			<thead>
+				<tr>
+					<th>Burgers</th>
+					<th>Fries</th>
+					<th>Drink</th>
+					<th>Salad</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="formSubmit" value="Cheese">Cheese</td>
+					<td class="formSubmit" value="Poutine">Poutine</td>
+					<td class="formSubmit" value="Coke">Coke</td>
+					<td class="formSubmit" value="Avocado">Avocado</td>
+				</tr>
+				<tr>
+					<td class="formSubmit" value="Double">Double</td>
+					<td class="formSubmit" value="Onion">Onion</td>
+					<td class="formSubmit" value="Coffee">Coffee</td>
+					<td class="formSubmit" value="Seafood">Seafood</td>
+				</tr>
+				<tr>
+					<td class="formSubmit" value="Teriyaki">Teriaki</td>
+					<td class="formSubmit" value="Normal">Normal</td>
+					<td class="formSubmit" value="Orange">Orange</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td class="formSubmit" value="Vege">Vege</td>
+					<td></td>
+					<td class="formSubmit" value="Milk">Milk</td>
+					<td></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
 	<img id="lettuce" src="img/lettuce.jpg" alt="Lettuce"> 
 	<img id="humburger" src="img/hamburger.jpg" alt="BurgerVacation"><br/>
 </div></br>
@@ -169,7 +220,7 @@
 				<div><font id="signUpErrorMessage"></font></div>
 				<div><font id="signUpSuccessMessage"></font></div>
 				<div class="rightText">
-					<button type="submit" id="signUpBtn" name="signUpBtn" class="btn btn-primary">Submit</button>
+					<button type="submit" id="signUpBtn" name="signUpBtn" class="btn">Submit</button>
 				</div>
 			</form>
 		</div>
@@ -178,8 +229,8 @@
 			<div class="centerText">
 				<div id="map_canvas"></div>
 			</div>
-			<span class="glyphicon glyphicon-phone"><label> 604-620-1111</label></span></br>
-			<span class="glyphicon glyphicon-map-marker"><label> 609 WestHastings St, Vancouver BC</label></span></br>
+			<span class="glyphicon glyphicon-phone"><label class="footerExp"> 604-620-1111</label></span></br>
+						<span class="glyphicon glyphicon-map-marker"><label class="footerExp"> 609 WestHastings St,</label><label>&nbsp;Vancouver BC</label></span></br>
 		</div>
 		</div>
 	</div>

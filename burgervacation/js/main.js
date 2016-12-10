@@ -1,5 +1,4 @@
-function display(num)
-{
+function display(num){
 	document.getElementById("myAccountErrorMessage").innerHTML="";
 	document.getElementById("myAccountSuccessMessage").innerHTML="";
 	if (num == 0){
@@ -10,8 +9,16 @@ function display(num)
 	}
 }
 
+function tableMenuShow(){
+	$("#tableMenu").fadeIn("slow");
+}
+
 $(document).on('click', ".formSubmit", function() {
-	  var val = $(this).attr("value");
+	var val = $(this).attr("value");
+	$("#tableMenu").fadeOut("slow");
+	document.getElementById("menu").value = val;
+  	document.getElementById("menuBtn").click();
+	
 });
 
 $(document).ready(function(){
@@ -50,17 +57,11 @@ $(document).ready(function(){
 });
 
 $(document).ready(function(){
-       	$("#menuForm").submit(function(){
-		$.post( "myAccountBtn.php", $(this).serialize(), function(response){
+	$("#menuForm").submit(function(){
+		$.post( "menuBtn.php", $(this).serialize(), function(response){
 			var dt = response.split(",");
-			if (dt[0] == 1){
-				document.getElementById("myAccountSuccessMessage").innerHTML="";
-				document.getElementById("myAccountErrorMessage").innerHTML=dt[1];
-			}else{
-				document.getElementById("myAccountErrorMessage").innerHTML="";
-				document.getElementById("myAccountSuccessMessage").innerHTML=dt[1];
-			}
 		});
+		return false;
 	});
 });
 
