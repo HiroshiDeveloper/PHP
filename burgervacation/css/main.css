@@ -93,7 +93,7 @@
 	height: 370px;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
- 	background: url("../img/header4.jpg");
+ 	background: url("../img/header.jpg");
     	
 	-moz-background-size:cover;
 	background-size: cover;
@@ -155,8 +155,13 @@
 	margin-bottom: 0px;
 }
 
+#fpExp{
+	border: none;
+}
+
 #fpImage{
-	width:330px;
+	width: 330px;
+	border: none;
 }
 
 .fp_margin{
@@ -293,6 +298,11 @@
 }
 
 @media only screen and (max-width: 480px){
+	
+	.header{
+		background: url("../img/headerMobile.jpg");
+	}
+
 	.logo{
 		width: 130px;
 		height: 65px;
@@ -345,6 +355,9 @@
 	        width: 40%;
 	}
 
-
+	.formInput label{
+		font-size: 10px;
+	}
 }
+
 
