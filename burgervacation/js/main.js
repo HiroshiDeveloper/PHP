@@ -10,15 +10,22 @@ function display(num){
 }
 
 function tableMenuShow(){
+	$("#price").fadeOut("slow");
+	$("#food").fadeOut("slow");
 	$("#tableMenu").fadeIn("slow");
 }
 
+
+$(document).on('click', ".dropmenu .formSubmit", function() {
+  	var val = $(this).parent().parent().attr("value");
+	document.getElementById("genre").value = val;
+});
+
 $(document).on('click', ".formSubmit", function() {
-	var val = $(this).attr("value");
+	//var val = $(this).attr("value");
 	$("#tableMenu").fadeOut("slow");
-	document.getElementById("menu").value = val;
-  	document.getElementById("menuBtn").click();
-	
+	document.getElementById("menu").value = $(this).text();
+	document.getElementById("menuBtn").click();
 });
 
 $(document).ready(function(){
@@ -36,10 +43,7 @@ $(document).ready(function(){
 		} );
     		return false;
 	});
-});
-
-
-$(document).ready(function(){
+	
 	$("#myAccountForm").submit(function(){
     		$.post( "myAccountBtn.php", $(this).serialize(), function(response){
 			var dt = response.split(",");
@@ -54,14 +58,42 @@ $(document).ready(function(){
 		} );
     		return false;
 	});
-});
 
-$(document).ready(function(){
 	$("#menuForm").submit(function(){
 		$.post( "menuBtn.php", $(this).serialize(), function(response){
+			//alert(response);
 			var dt = response.split(",");
+			if(dt.length > 0){
+				document.getElementById("price").innerHTML="$"+dt[0];
+				document.getElementById("food").src=dt[1];
+				$("#price").fadeIn("slow");
+				$("#food").fadeIn("slow");
+			}
 		});
 		return false;
 	});
+
+
+	$('#tableMenu td').click(function(){
+		var col = this.cellIndex;
+		switch(col){
+			case 0:
+				document.getElementById("genre").value = "burgers";
+				break;
+			case 1:
+				document.getElementById("genre").value = "fries";
+				break;
+			case 2:
+				document.getElementById("genre").value = "drinks";
+				break;
+			case 3:
+				document.getElementById("genre").value = "salad";
+				break;
+			default:
+				break;
+		}
+	
+	});
+
 });
 

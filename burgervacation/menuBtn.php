@@ -2,9 +2,18 @@
 
 require "../../mysql.php";
 
-error_log("###PASS0###");
-$menu = $_POST['menu'];
-error_log($menu);
-error_log("###PASS1###");
+$order = $_POST['order'];
+try{
+	$selectSql = "SELECT * FROM ".$order['genre']." WHERE name='".$order['menu']."'";
+	error_log($selectSql);
+	$data = $pdo->query($selectSql);
+	$dataFetch = $data->fetch();
+	echo $dataFetch['price'].",".$dataFetch['url'];
+}catch(PDOException $e){
+	header('Content-Type: text/plain; charset=UTF-8', true, 500);
+	exit($e->getMessage());
+}
+
+
 
 ?>
