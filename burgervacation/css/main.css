@@ -210,6 +210,26 @@
 	position: relative;
 }
 
+.display #arrowLeft{
+	display: none;
+	position: absolute;
+	top: 150px;
+	bottom: 0;
+	left: 150px;
+	font-size: 40px;
+	color: #E97423;
+}
+
+.display #arrowRight{
+	display: none;
+	position: absolute;
+	top: 150px;
+	bottom: 0;
+	right: 150px;
+	font-size: 40px;
+	color: #E97423;
+}
+
 .display #price{
 	display: none;
 	font-size: 50px;
@@ -328,6 +348,21 @@
 	  	width: 180px;
 	 	height: 90px;
 	}
+
+	.display #arrowLeft{
+		position: absolute;
+	        top: 150px;
+	 	bottom: 0;
+		left: 100px;
+	}
+
+
+	.display #arrowRight{
+		position: absolute;
+	        top: 150px;
+	 	bottom: 0;
+		right: 100px;
+	}
 }
 
 @media only screen and (max-width: 480px){
@@ -377,6 +412,14 @@
 	#show2{
 		width: 260px;
 		height: 195px;
+	}
+
+	.display #arrowLeft{
+	     	left: 10px;
+	}
+
+	.display #arrowRight{
+		right: 10px;
 	}
 
 	.display #price{

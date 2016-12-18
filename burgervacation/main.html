@@ -101,33 +101,16 @@
 	<form id="menuForm" name="menuForm" class="form-horizontal" role="form" method="post" action="">
 		<ul id="flip" class="dropmenu">
 			<li><a href="javascript:void(0)">Burgers</a>
-				<ul value="burgers">
-			    		<li><a href="javascript:void(0)" class="formSubmit">Cheese</a></li>
-			    		<li><a href="javascript:void(0)" class="formSubmit">Double</a></li>
-			    		<li><a href="javascript:void(0)" class="formSubmit">Teriyaki</a></li>
-			    		<li><a href="javascript:void(0)" class="formSubmit">Vage</a></li>
-		    		</ul>
+				<ul value="burgers" id="burgersList"></ul>
 			</li>
 			<li><a href="javascript:void(0)">Fries</a>
-				<ul value="fries">
-			    		<li><a href="javascript:void(0)" class="formSubmit">Poutine</a></li>
-			    		<li><a href="javascript:void(0)" class="formSubmit">Onion</a></li>
-			    		<li><a href="javascript:void(0)" class="formSubmit">Normal</a></li>
-		    		</ul>
+				<ul value="fries" id="friesList"></ul>
 			</li>
 			<li><a href="javascript:void(0)">Drink</a>
-				<ul value="drinks">
-			    		<li><a href="javascript:void(0)" class="formSubmit">Coke</a></li>
-			    		<li><a href="javascript:void(0)" class="formSubmit">Coffee</a></li>
-			    		<li><a href="javascript:void(0)" class="formSubmit">Orange</a></li>
-			    		<li><a href="javascript:void(0)" class="formSubmit">Milk</a></li>
-		      		</ul>
+				<ul value="drinks" id="drinkList"></ul>
 			</li>
 			<li><a href="javascript:void(0)">Salad</a>
-				<ul value="salad">
-			    		<li><a href="javascript:void(0)" class="formSubmit">Avocado</a></li>
-			    		<li><a href="javascript:void(0)" class="formSubmit">Seafood</a></li>
-		    		</ul>
+				<ul value="salad" id="saladList"></ul>
 			</li>
 			<li><a href="javascript:void(0)" onclick="tableMenuShow()">Menu</a></li>
 		</ul>
@@ -152,36 +135,13 @@
 					<th>Salad</th>
 				</tr>
 			</thead>
-			<tbody>
-				<tr>
-					<td class="formSubmit">Cheese</td>
-					<td class="formSubmit">Poutine</td>
-					<td class="formSubmit">Coke</td>
-					<td class="formSubmit">Avocado</td>
-				</tr>
-				<tr>
-					<td class="formSubmit">Double</td>
-					<td class="formSubmit">Onion</td>
-					<td class="formSubmit">Coffee</td>
-					<td class="formSubmit">Seafood</td>
-				</tr>
-				<tr>
-					<td class="formSubmit">Teriaki</td>
-					<td class="formSubmit">Normal</td>
-					<td class="formSubmit">Orange</td>
-					<td></td>
-				</tr>
-				<tr>
-					<td class="formSubmit">Vege</td>
-					<td></td>
-					<td class="formSubmit">Milk</td>
-					<td></td>
-				</tr>
-			</tbody>
+			<tbody id="foodList"></tbody>
 		</table>
 	</div>
 	<label id="price"></label>
+	<span class="glyphicon glyphicon-chevron-left" id="arrowLeft"></span>
 	<img id="food" alt="Sorry, We're updating the data..">
+	<span class="glyphicon glyphicon-chevron-right" id="arrowRight"></span>
 	<img id="lettuce" src="img/lettuce.jpg" alt="Lettuce"> 
 	<img id="humburger" src="img/hamburger.jpg" alt="BurgerVacation"><br/>
 </div></br>
