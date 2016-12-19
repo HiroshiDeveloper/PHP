@@ -19,16 +19,15 @@ if($flg == 0){
 	try{
 		$selectSql = "SELECT * FROM users WHERE userName='".$userName."'". "and ". "password='".$password."'";
 		$data = $pdo->query($selectSql);
-		error_log($selectSql);
 		if(empty($data)){
 			echo '1'.','.'Please check user name and password again';
 			return;
 		}
 
-		error_log('Success');
+		session_start();
+		$_SESSION['user'] = $userName;
 		$dataFetch = $data->fetch();
 		echo '0'.','.'Welocome to '.$dataFetch['userName'];
-
 	}catch(PDOException $e){
 		header('Content-Type: text/plain; charset=UTF-8', true, 500);
 		exit($e->getMessage());

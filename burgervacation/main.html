@@ -1,204 +1,187 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>Burger Vacation</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true&key=AIzaSyAgOq4l4yhnnfXK4Pf0cJSXVhguDHFZtgk"></script>
-
-<!--
- <script src="http://www.google.com/jsapi/"></script>
- -->
-
-<link rel="stylesheet" href="css/main.css">
-<link rel="stylesheet" href="css/dropdown.css">
-<link rel="stylesheet" href="css/animate.css">
-<script src="js/map.js"></script>
-<script src="js/main.js"></script>
+<head>	
+	<title>Burger Vacation</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true&key=AIzaSyAgOq4l4yhnnfXK4Pf0cJSXVhguDHFZtgk"></script>
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/dropdown.css">
+	<link rel="stylesheet" href="css/animate.css">
+	<script src="js/map.js"></script>
+	<script src="js/main.js"></script>
 </head>
 
 <body onload="initialize();">
 
-<!-- navi -->
-<div class="navi">
-	<ul class="list">
-		<li><a href="#signUp">SIGN UP</a></li>
-		<li> | </li>
-		<li onclick="display(0)" class="bgHeader"><a href="#">MY ACCOUNT</a></li>
-	</ul>
-</div>
-
-<div class="header">
-	<div class="header_content">
-		<!--	
+	<!-- navi -->
+	<div class="navi">
 		<ul class="list">
-			<li class="bgHeader"><a href="#signUp">SIGN UP</a></li>
-			<li onclick="display(0)" class="bgHeader"><a href="#">MY ACCOUNT</a></li>
-		</ul><br/>
-		-->
-		
-		<div class="row">
-			<div class="col-xs-4">
-				<img src="img/logo.png" class="img-rounded logo" alt="BurgerVacation Logo">
-			</div>
-			<div class="col-xs-8 rightText">
-			</div>
-		</div>
-		<div class="row aniview" av-animation="fadeInDown" id="account">
-			<!--
-			<div class="col-xs-5">
-			-->
-				<span class="glyphicon glyphicon-remove-circle right" id="removeIcon" onclick="display(1)"></span>
-				<form id="myAccountForm" class="form-horizontal" role="form" action="" method="post">
-					<div class="form-group">
-						<!-- username -->
-						<input type="text" class="form-control marginBottom" placeholder="User Name" name="userName">
-						<!-- password -->
-						<input type="password" class="form-control" placeholder="Password" name="password">
-					</div>
-					<div class="rightText">
-						<button type="submit" id="myAccountBtn" name="myAccountBtn" class="btn btn-primary">Submit</button><br/>
-						<button type="button" class="btn btn-default">Send your password?</button>
-					</div>
-				</form>
-			<!--
-			</div>
-			<div class="col-xs-7">
-			</div>
-			-->
-		</div><br/>
-		<div><font id="myAccountErrorMessage"></font></div>
-		<div >
-			<font id="myAccountSuccessMessage"></font>
-		</div><br/>
-	</div>
-</div>
-
-<!-- featured products -->
-<div class="featuredProduct">
-	<!-- <div class="container fp_margin"> -->
-	<table class="table fpTable">
-		<tbody>
-			<tr>
-				<td id="fpExp">
-					<h2><i id="fp_burgerName"></i></h2>
-					<p><i id="fp_burgerExp"></i></p>
-				</td>
-				<td id="fpImage">
-					<img src="img/fp_burger1.png" id="show1" class="fadeout">
-					<img src="img/fp_burger2.png" id="show2" class="fadein">
-				</td>
-			</tr>
-		</tbody>			
-	</table>		
-</div>
-
-<!-- main -->
-<div class="left">
-	<form id="menuForm" name="menuForm" class="form-horizontal" role="form" method="post" action="">
-		<ul id="flip" class="dropmenu">
-			<li><a href="javascript:void(0)">Burgers</a>
-				<ul value="burgers" id="burgersList"></ul>
-			</li>
-			<li><a href="javascript:void(0)">Fries</a>
-				<ul value="fries" id="friesList"></ul>
-			</li>
-			<li><a href="javascript:void(0)">Drink</a>
-				<ul value="drinks" id="drinkList"></ul>
-			</li>
-			<li><a href="javascript:void(0)">Salad</a>
-				<ul value="salad" id="saladList"></ul>
-			</li>
-			<li><a href="javascript:void(0)" onclick="tableMenuShow()">Menu</a></li>
+			<li><a href="#signUp">SIGN UP</a></li>
+			<li> | </li>
+			<li onclick="display(0)" class="bgHeader"><a href="javascript:void(0)">MY ACCOUNT</a></li>
 		</ul>
-		<!-- hidden data -->
-		<div class="hidden">
-			<input id="genre" type=hidden name="order[genre]" value="">
-			<input id="menu" type=hidden name="order[menu]" value="">
-			<input id="menuBtn" type=submit>
-		</div>
-	</form>
-</div>
-
-<div class="rightText display">
-	<div class="container" id="tableMenu">
-		<table class="table">
-			<caption>Menu</caption>
-			<thead>
-				<tr>
-					<th>Burgers</th>
-					<th>Fries</th>
-					<th>Drink</th>
-					<th>Salad</th>
-				</tr>
-			</thead>
-			<tbody id="foodList"></tbody>
-		</table>
 	</div>
-	<label id="price"></label>
-	<span class="glyphicon glyphicon-chevron-left" id="arrowLeft"></span>
-	<img id="food" alt="Sorry, We're updating the data..">
-	<span class="glyphicon glyphicon-chevron-right" id="arrowRight"></span>
-	<img id="lettuce" src="img/lettuce.jpg" alt="Lettuce"> 
-	<img id="humburger" src="img/hamburger.jpg" alt="BurgerVacation"><br/>
-</div></br>
 
-<!-- Footer  -->
-<div class="footer">
-	<div class="container">
-		<div class="row">
-			<div class="col-sm-7">
-				<h3 id="signUp">Sign Up</h3>
-				<form id="signUpForm" class="form-horizontal" role="form" action="" method="post">
-					<div class="form-group formInput">
-						<div class="row">
-							<div class="col-xs-6">
-								<!-- username -->
-								<span class="glyphicon glyphicon-user"><label>Name</label></span>
-								<input type="text" name="userName" class="form-control" placeholder="User Name">
-							</div>
-							<div class="col-xs-6">
-								<!-- Phone Number -->
-								<span class="glyphicon glyphicon-phone"><label>Phone</label></span>
-								<input type="tel" name="phoneNumber" class="form-control" placeholder="e.g.)604842****">
-							</div>
-						</div><br/>
-						<div class="row">
-							<div class="col-xs-6">
-								<!-- username -->
-								<span class="glyphicon glyphicon-envelope"><label>Email</label></span>
-								<input type="email" name="email" class="form-control" placeholder="e.g.)sample@gmial.com">
-							</div>
-						<div class="col-xs-6">
-							<!-- password -->
-							<span class="glyphicon glyphicon-lock"><label>Password</label></span>
-							<input type="password" name="password" class="form-control" placeholder="Password">
-						</div>
-					</div>
+	<div class="header">
+		<div class="header_content">
+			<div class="row">
+				<div class="col-xs-4">
+					<img src="img/logo.png" class="img-rounded logo" alt="BurgerVacation Logo">
 				</div>
-				<div><font id="signUpErrorMessage"></font></div>
-				<div><font id="signUpSuccessMessage"></font></div>
-				<div class="rightText">
-					<button type="submit" id="signUpBtn" name="signUpBtn" class="btn">Submit</button>
+				<div class="col-xs-8 rightText">
 				</div>
-			</form>
-		</div>
-		<div class="col-sm-5">
-			<h3>Location</h3>
-			<div class="centerText">
-				<div id="map_canvas"></div>
 			</div>
-			<span class="glyphicon glyphicon-phone"><label class="footerExp"> 604-620-1111</label></span></br>
-						<span class="glyphicon glyphicon-map-marker"><label class="footerExp"> 609 WestHastings St,</label><label>&nbsp;Vancouver BC</label></span></br>
-		</div>
+			<div class="row aniview" av-animation="fadeInDown" id="account">
+				<!--
+				<div class="col-xs-5">
+				-->
+					<span class="glyphicon glyphicon-remove-circle right" id="removeIcon" onclick="display(1)"></span>
+					<form id="myAccountForm" class="form-horizontal" role="form" action="" method="post">
+						<div class="form-group">
+							<!-- username -->
+							<input type="text" class="form-control marginBottom" placeholder="User Name" name="userName">
+							<!-- password -->
+							<input type="password" class="form-control" placeholder="Password" name="password">
+						</div>
+						<div class="rightText">
+							<button type="submit" id="myAccountBtn" name="myAccountBtn" class="btn btn-primary">Submit</button><br/>
+							<button type="button" class="btn btn-default">Send your password?</button>
+						</div>
+					</form>
+			</div><br/>
+			<div><font id="myAccountErrorMessage"></font></div>
+			<div >
+				<font id="myAccountSuccessMessage"></font>
+			</div><br/>
 		</div>
 	</div>
-</div>
 
-<!-- featured product animation -->
-<script src="js/featuredProducts.js"></script>
+	<!-- featured products -->
+	<div class="featuredProduct">
+		<!-- <div class="container fp_margin"> -->
+		<table class="table fpTable">
+			<tbody>
+				<tr>
+					<td id="fpExp">
+						<h2><i id="fp_burgerName"></i></h2>
+						<p><i id="fp_burgerExp"></i></p>
+					</td>
+					<td id="fpImage">
+						<img src="img/fp_burger1.png" id="show1" class="fadeout">
+						<img src="img/fp_burger2.png" id="show2" class="fadein">
+					</td>
+				</tr>
+			</tbody>			
+		</table>		
+	</div>
+
+	<!-- main -->
+	<div class="left">
+		<form id="menuForm" name="menuForm" class="form-horizontal" role="form" method="post" action="">
+			<ul id="flip" class="dropmenu">
+				<li><a href="javascript:void(0)">Burgers</a>
+					<ul value="burgers" id="burgersList"></ul>
+				</li>
+				<li><a href="javascript:void(0)">Fries</a>
+					<ul value="fries" id="friesList"></ul>
+				</li>
+				<li><a href="javascript:void(0)">Drink</a>
+					<ul value="drinks" id="drinkList"></ul>
+				</li>
+				<li><a href="javascript:void(0)">Salad</a>
+					<ul value="salad" id="saladList"></ul>
+				</li>
+				<li><a href="javascript:void(0)" onclick="tableMenuShow()">Menu</a></li>
+			</ul>
+			<!-- hidden data -->
+			<div class="hidden">
+				<input id="genre" type=hidden name="order[genre]" value="">
+				<input id="menu" type=hidden name="order[menu]" value="">
+				<input id="menuBtn" type=submit>
+			</div>
+		</form>
+	</div>
+
+	<div class="rightText display">
+		<div class="container" id="tableMenu">
+			<table class="table">
+				<caption>Menu</caption>
+				<thead>
+					<tr>
+						<th>Burgers</th>
+						<th>Fries</th>
+						<th>Drink</th>
+						<th>Salad</th>
+					</tr>
+				</thead>
+				<tbody id="foodList"></tbody>
+			</table>
+		</div>
+		<label id="price"></label>
+		<span class="glyphicon glyphicon-chevron-left" id="arrowLeft"></span>
+		<img id="food" alt="Sorry, We're updating the data..">
+		<span class="glyphicon glyphicon-chevron-right" id="arrowRight"></span>
+		<img id="lettuce" src="img/lettuce.jpg" alt="Lettuce"> 
+		<img id="humburger" src="img/hamburger.jpg" alt="BurgerVacation"><br/>
+	</div></br>
+
+	<!-- Footer  -->
+	<div class="footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-7">
+					<h3 id="signUp">Sign Up</h3>
+					<form id="signUpForm" class="form-horizontal" role="form" action="" method="post">
+						<div class="form-group formInput">
+							<div class="row">
+								<div class="col-xs-6">
+									<!-- username -->
+									<span class="glyphicon glyphicon-user"><label>Name</label></span>
+									<input type="text" name="userName" class="form-control" placeholder="User Name">
+								</div>
+								<div class="col-xs-6">
+									<!-- Phone Number -->
+									<span class="glyphicon glyphicon-phone"><label>Phone</label></span>
+									<input type="tel" name="phoneNumber" class="form-control" placeholder="e.g.)604842****">
+								</div>
+							</div><br/>
+							<div class="row">
+								<div class="col-xs-6">
+									<!-- username -->
+									<span class="glyphicon glyphicon-envelope"><label>Email</label></span>
+									<input type="email" name="email" class="form-control" placeholder="e.g.)sample@gmial.com">
+								</div>
+								<div class="col-xs-6">
+									<!-- password -->
+									<span class="glyphicon glyphicon-lock"><label>Password</label></span>
+									<input type="password" name="password" class="form-control" placeholder="Password">
+								</div>
+							</div>
+						</div>
+						<div><font id="signUpErrorMessage"></font></div>
+						<div><font id="signUpSuccessMessage"></font></div>
+						<div class="rightText">
+							<button type="submit" id="signUpBtn" name="signUpBtn" class="btn">Submit</button>
+						</div>
+					</form>
+				</div>
+				<div class="col-sm-5">
+					<h3>Location</h3>
+					<div class="centerText">
+						<div id="map_canvas"></div>
+					</div>
+					<span class="glyphicon glyphicon-phone"><label class="footerExp"> 604-620-1111</label></span></br>
+					<span class="glyphicon glyphicon-map-marker"><label class="footerExp"> 609 WestHastings St,</label><label>&nbsp;Vancouver BC</label></span></br>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- featured product animation -->
+	<script src="js/featuredProducts.js"></script>
 </body>
 </html>

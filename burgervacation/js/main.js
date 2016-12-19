@@ -120,7 +120,6 @@ $(document).ready(function(){
 			}else{
 				document.getElementById("signUpErrorMessage").innerHTML="";
 				document.getElementById("signUpSuccessMessage").innerHTML=dt[1];
-			
 			}
 		} );
     		return false;
@@ -133,9 +132,9 @@ $(document).ready(function(){
 				document.getElementById("myAccountSuccessMessage").innerHTML="";
 				document.getElementById("myAccountErrorMessage").innerHTML=dt[1];
 			}else{
-				document.getElementById("myAccountErrorMessage").innerHTML="";
-				document.getElementById("myAccountSuccessMessage").innerHTML=dt[1];
-			
+				//document.getElementById("myAccountErrorMessage").innerHTML="";
+				//document.getElementById("myAccountSuccessMessage").innerHTML=dt[1];
+				window.location.href = "myPage.html";
 			}
 		} );
     		return false;

@@ -1,0 +1,12 @@
+.myHeader{
+	height: 370px;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	background: url("../img/myHeader.jpg");
+	-moz-background-size:cover;
+	background-size: cover;
+}
+
+.myName{
+	color: #FFF;
+}
