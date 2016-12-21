@@ -13,37 +13,31 @@
 </head>
 <body>
 	<!-- navi -->
-	<div class="navi">
+	<div class="myNavi">
 		<ul class="list">
 			<li><a href="main.html">HOME</a></li>
 		</ul>
-	</div>
-	<div class="myHeader">
-		<div class="header_content">
+
 			<div class="row">
-				<div class="col-xs-4">
-					<img src="img/logo.png" class="img-rounded logo" alt="BurgerVacation Logo"><br/>
-					<label class="myName">
+				<div class="col-xs-4 mpLogo">
+					<img src="img/logo.png" class="img-rounded logo" alt="BurgerVacation Logo">
+				
+					<h1 class="myName">
 						<?php
 							session_start();
 							$userName = $_SESSION['user'];
 	    						echo $userName;
 						?>
-					</label>
-
 				</div>
-				<div class="col-xs-8 rightText">
+				<div class="col-xs-8">
+					</h1>
 				</div>
 			</div>
+	</div>
+	<div class="myHeader">
+		<div class="header_content">
 		</div>
 	</div>
-
-	<p><?php
-	$name = '田中';
-	echo 'こんにちは', $name, 'さん'; //こんにちは田中さん
-	?></p>
-
-
 
 </body>
 </html>

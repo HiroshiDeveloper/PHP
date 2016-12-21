@@ -1,12 +1,27 @@
+/*
 .myHeader{
-	height: 370px;
+	height: 600px;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
-	background: url("../img/myHeader.jpg");
+	background: url("../img/myHeader14.jpg");
 	-moz-background-size:cover;
 	background-size: cover;
 }
+*/
+
+.hi{
+	display:inline;
+}
 
 .myName{
+	display:inline;
+}
+
+.myNavi{
+	background-color: rgba(0, 0, 0, 0.9);
 	color: #FFF;
+}
+
+.mpLogo{
+	margin-left: 15px;
 }
