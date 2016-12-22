@@ -20,8 +20,10 @@
 .myNavi{
 	background-color: rgba(0, 0, 0, 0.9);
 	color: #FFF;
+	height: 50px;
 }
 
 .mpLogo{
-	margin-left: 15px;
+	margin-left: 10px;
+	float: left;
 }

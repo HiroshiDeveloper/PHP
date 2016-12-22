@@ -1,28 +1,29 @@
 // burger image list
 var burgerImage = new Array(	
-	"img/fp_burger1.png",		
-	"img/fp_burger2.png",
-	"img/fp_burger3.png",
-	"img/fp_burger4.png"
+	"img/mashHam.png",		
+	"img/shrimp.png",
+	"img/steak.png"
 );
 
 // burger name list
 var burgerName = new Array(
-	"Featured Burger1",
-	"Featured Burger2",
-	"Featured Burger3",
-	"Featured Burger4"
+	"MashHam Burger",
+	"Shrimp Burger",
+	"Steak Burger"
 );
 
 var burgerExp = new Array(
-	"This is Featured Burger1. ABC",
-	"This is Featured Burger2. DEF",
-	"This is Featured Burger3. GHI",
-	"This is Featured Burger4. JLK"
+	"This is MashHam Burger! A lot of mashrooms and hams inside the burger! Let's try the seasonal burger!!",
+	"This is Shrimp Burger! The shrimps are caught in Canada. The shrimp and the creamy sauce are a vary good combination!",
+	"This is Steak Burger! American beef 100%. Let's try the burger with BBQ sauce. If you are hungy, that's perfect!"
 )
 
 var myNowCnt = -1;	// current number of array
 var myflg = 0;		// display flag
+
+
+document.getElementById("show1").src = burgerImage[0];	// initialize
+document.getElementById("show2").src = burgerImage[1];
 
 // slide show
 function myChange(){

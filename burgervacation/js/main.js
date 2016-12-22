@@ -1,7 +1,7 @@
-var burgers = ['Cheese', 'Double', 'Teriyaki', 'Vege'];
+var burgers = ['Cheese', 'Double', 'Triple', 'MashHam', 'Shrimp', 'Steak'];
 var fries = ['Poutine', 'Onion', 'Normal'];
-var drinks = ['Coke', 'Coffee', 'Orange', 'Milk'];
-var salad = ['Avocado', 'Seafood'];
+var drinks = ['Coke', 'Coffee', 'Milk'];
+var salad = ['Avocado', 'Caeser'];
 
 function display(num){
 	document.getElementById("myAccountErrorMessage").innerHTML="";
