@@ -1,29 +1,39 @@
-/*
-.myHeader{
-	height: 600px;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-	background: url("../img/myHeader14.jpg");
-	-moz-background-size:cover;
+/* body */
+.mainPage{
+	background-image: url(../img/myPage.jpg);
+    	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
 	background-size: cover;
 }
-*/
 
-.hi{
-	display:inline;
-}
-
-.myName{
-	display:inline;
-}
-
-.myNavi{
-	background-color: rgba(0, 0, 0, 0.9);
-	color: #FFF;
-	height: 50px;
-}
-
+/* header */
 .mpLogo{
 	margin-left: 10px;
-	float: left;
+	display: inline-block;
+}
+
+.mpIntro{
+	display: inline-block;
+	margin-left: 20px;
+	color: #FFF;
+}
+
+.mpHeader{
+	background-color: rgba(0,0,0,0.2);
+}
+
+/* main */
+.mpComponent{
+	color: #FFF;
+	background-color: rgba(0,0,0,0.6);
+}
+.stars{
+}
+
+.card{
+}
+
+.test{
+	height: 500px;
 }

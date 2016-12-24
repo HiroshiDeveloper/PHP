@@ -10,28 +10,55 @@
 	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true&key=AIzaSyAgOq4l4yhnnfXK4Pf0cJSXVhguDHFZtgk"></script>
 	<link rel="stylesheet" href="css/main.css">
 	<link rel="stylesheet" href="css/myPage.css">
+
+	<!-- google fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Aref+Ruqaa" rel="stylesheet">
 </head>
-<body>
+<body class="mainPage">
 	<!-- navi -->
-	<div class="myNavi">
+	<div class="navi">
 		<ul class="list">
 			<li><a href="main.html">HOME</a></li>
 		</ul>
 	</div>
-	<div class="myHeader">
+	<div class="mpHeader">
 		<div class="header_content">
-			<h1 class="myName">
-				<?php
-					session_start();
-					$userName = $_SESSION['user'];
-	    				echo $userName;
-				?>
-			</h1>
 			<div class="mpLogo">
 				<img src="img/logo.png" class="img-rounded logo" alt="BurgerVacation Logo">
 			</div>
+			<div class="mpIntro">
+				<h1 class="myName">Hi, 
+					<?php
+						session_start();
+						$userName = $_SESSION['user'];
+		    				echo $userName;
+					?>
+				</h1>
+			</div>
+		</div>
+	</div><br/>
+	<div>
+		<div class="container">
+			<div class="row mpComponent">
+				<div class="col-sm-6 stars">
+					<h2>Stars</h2>
+					<p>You have 
+					<label>
+						<?php
+	 						session_start();
+	 						$stars = $_SESSION['stars'];
+	 						echo $stars;
+	 					?>
+					</label>
+					   stars!
+					</p>
+				</div>
+				<div class="col-sm-6 card">
+					<h2>Your Card</h2>
+				</div>
+			</div>
+			<p class="test"></p>
 		</div>
 	</div>
-
 </body>
 </html>

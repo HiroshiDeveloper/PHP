@@ -36,20 +36,22 @@ if($flg == 0){
 		
 		/* DATA TEST
 		foreach($data as $dt){
+			error_log("---");
 			error_log($dt['userName']." : ".$dt['date']);
 		}
-		*/
-
-		if(!empty($data)){ 
+		 */
+		
+		if($data->fetchColumn() > 0){ 
 			echo '1'.','.'The user name is taken';
 			return;
 		}
-		
+
 		// local
 		// my server
 		// read "../../mysql.php" : $pdo = ~
 		$pdo -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
+		
+		// insert data into users table
 		$stmt = $pdo -> prepare("INSERT INTO users (userName, phoneNumber, email, password, date) VALUES (:userName, :phoneNumber, :email, :password, :date)");
 			
 		$stmt->bindParam(':userName', $userName, PDO::PARAM_STR);
@@ -58,6 +60,22 @@ if($flg == 0){
 		$stmt->bindParam(':password', $password, PDO::PARAM_STR);
 		$stmt->bindParam(':date', $date, PDO::PARAM_STR);
 		$stmt->execute();
+		
+		//get userId
+		$userGetSql = "SELECT * FROM users WHERE userName='".$userName."'";
+		$user = $pdo->query($userGetSql);
+
+		foreach($user as $dt){
+			$userData = $dt;
+		}
+
+		//insert data into userStars table
+		$stars = 3;
+		$stmtStars = $pdo -> prepare("INSERT INTO userStars (userId, stars, date) VALUES (:userId, :stars, :date)");
+		$stmtStars->bindParam(':userId', $userData['userId'], PDO::PARAM_INT);
+		$stmtStars->bindParam(':stars', $stars, PDO::PARAM_INT);
+		$stmtStars->bindParam(':date', $date, PDO::PARAM_STR);
+		$stmtStars->execute();
 
 		$message = 'Success';
 		echo '0'.','.$message;
