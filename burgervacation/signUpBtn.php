@@ -5,7 +5,7 @@ $userName = $_POST['userName'];
 $phoneNumber = $_POST['phoneNumber'];
 $email = $_POST['email'];
 $password = $_POST['password'];
-$date = date("Y/m/d");
+$date = date("Y/m/d H:i:s");
 $flg = 0;
 $message = "";
 
@@ -27,8 +27,9 @@ if (empty($_POST["password"])) {
 }
 if($flg == 0){
 	//$dsn = (../../mysql.php)
-	$user = 'LAA0786421';
-	$pass = "danielpowter";
+	//$user = 'LAA0786421';
+	//$pass = "danielpowter";
+	
 	try{
 
 		$checkSql = "SELECT * FROM users WHERE userName='".$userName."'";
@@ -66,6 +67,7 @@ if($flg == 0){
 		$user = $pdo->query($userGetSql);
 
 		foreach($user as $dt){
+			error_log("#######DATA######");
 			$userData = $dt;
 		}
 

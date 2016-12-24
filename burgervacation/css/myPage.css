@@ -29,6 +29,11 @@
 	background-color: rgba(0,0,0,0.6);
 }
 .stars{
+	font-size: 20px;
+}
+
+.starNumber{
+	color: #FC8E42;
 }
 
 .card{
