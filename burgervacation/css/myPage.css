@@ -26,19 +26,35 @@
 /* main */
 .mpComponent{
 	color: #FFF;
-	background-color: rgba(0,0,0,0.6);
+	background-color: rgba(0,0,0,0.7);
 }
-.stars{
+.userInfo{
 	font-size: 20px;
 }
 
-.starNumber{
+.orange{
 	color: #FC8E42;
-}
-
-.card{
 }
 
 .test{
 	height: 500px;
+}
+
+@media only screen and (max-width: 768px){
+
+}
+
+@media only screen and (max-width: 480px){
+	.userInfo{
+		font-size: 15px;
+	}
+
+	.userInfo h2{
+		font-size: 20px;
+	}
+
+	.rewardInfo h2{
+		font-size: 20px;
+	}
+
 }

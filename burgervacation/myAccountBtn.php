@@ -42,20 +42,13 @@ if($flg == 0){
 			$starData = $dt;
 		}
 		
-		error_log($starData['date']);
 		$pretime = strtotime($starData['date']);
 		$now = strtotime(date("Y/m/d H:i:s"));
 		$comp = $now - $pretime;	//compare
 		$comp = $comp/60;		//comvert to minutes
 
-		error_log("######");
-		error_log($pretime);
-		error_log($now);
-		error_log($comp);
-
 		if ( (int)$comp > 1440 ) //check the hour that is over 24 hours 60*24
 		{	
-			error_log("==TEST==");
 			$numStar = intval($starData['stars']) + 1;
 			$date = date("Y/m/d H:i:s");
 			$stmtStars = $pdo -> prepare("UPDATE userStars SET stars=:udStars, date=:udDate WHERE userId=:udUserId");
@@ -67,6 +60,17 @@ if($flg == 0){
 		}else{
 			$_SESSION['stars'] = $starData['stars'];
 		}
+
+		$cardSql = "SELECT * FROM userCard WHERE userId='".$userData['userId']."'";
+		$cardQuery = $pdo->prepare($cardSql);
+		$cardQuery->execute();
+		$card = $cardQuery;
+		foreach($card as $dt){
+			$cardData = $dt;
+		}
+		$_SESSION['cardId'] = $cardData['cardId'];
+		$_SESSION['balance'] = $cardData['price'];
+
 		echo '0'.','.'Welocome to '.$userData['userName'];
 	}catch(PDOException $e){
 		header('Content-Type: text/plain; charset=UTF-8', true, 500);

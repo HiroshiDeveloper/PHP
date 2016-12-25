@@ -37,27 +37,39 @@
 			</div>
 		</div>
 	</div><br/>
-	<div>
-		<div class="container">
-			<div class="row mpComponent">
-				<div class="col-sm-6 stars">
-					<h2>Stars</h2>
-					<p>You have 
-					<label class="starNumber">
-						<?php
-	 						$stars = $_SESSION['stars'];
-	 						echo $stars;
-	 					?>
-					</label>
+	<div class="container">
+		<div class="row mpComponent">
+			<div class="col-xs-6 userInfo">
+				<h2>Stars</h2>
+				<p>You have <label class="orange">
+					<?php
+ 						$stars = $_SESSION['stars'];
+		       				echo $stars;
+	 				?></label>
 					   stars!
-					</p>
-				</div>
-				<div class="col-sm-6 card">
-					<h2>Your Card</h2>
-				</div>
+				</p>
 			</div>
-			<p class="test"></p>
+			<div class="col-xs-6 userInfo">
+				<h2>Your Card</h2>
+				<p>S/N : <label class="orange">
+					<?php
+	 					$cardId = $_SESSION['cardId'];
+	 					echo $cardId;
+		     			?></label>
+				</p>
+				<p>Balence : <label class="orange">
+					<?php
+	 					$balance = $_SESSION['balance'];
+	 					echo $balance;
+		 			?> CAD</label>
+				</p>
+			</div>
 		</div>
+		<div class="row mpComponent rewardInfo">
+			<h2>What's the rewards?</h2>
+		</div>
+
+		<p class="test"></p>
 	</div>
 </body>
 </html>

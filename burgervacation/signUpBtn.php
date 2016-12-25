@@ -31,7 +31,6 @@ if($flg == 0){
 	//$pass = "danielpowter";
 	
 	try{
-
 		$checkSql = "SELECT * FROM users WHERE userName='".$userName."'";
 		$data = $pdo->query($checkSql);
 		
@@ -67,7 +66,6 @@ if($flg == 0){
 		$user = $pdo->query($userGetSql);
 
 		foreach($user as $dt){
-			error_log("#######DATA######");
 			$userData = $dt;
 		}
 
@@ -78,6 +76,27 @@ if($flg == 0){
 		$stmtStars->bindParam(':stars', $stars, PDO::PARAM_INT);
 		$stmtStars->bindParam(':date', $date, PDO::PARAM_STR);
 		$stmtStars->execute();
+
+		//insert data into userCard table
+		$money = "5.00";
+		$digits = 3;
+		$code = '';
+		for ($i = 0; $i < $digits; $i++) {
+			    $code .= mt_rand(0, 9);
+		}
+		$cardNumber = $userData['userId'].$code;
+		$stmtCard = $pdo -> prepare("INSERT INTO userCard (userId, cardId, price, date) VALUES (:userId, :cardId, :price, :date)");
+		$stmtCard->bindParam(':userId', $userData['userId'], PDO::PARAM_INT);
+		$stmtCard->bindParam(':cardId', $cardNumber, PDO::PARAM_INT);
+		$stmtCard->bindParam(':price', $money, PDO::PARAM_STR);
+		$stmtCard->bindParam(':date', $date, PDO::PARAM_STR);
+		$stmtCard->execute();
+
+		session_start();
+		$_SESSION['user'] = $userName;
+		$_SESSION['stars'] = $stars;
+		$_SESSION['balance'] = $money;
+		$_SESSION['cardId'] = $cardNumber;
 
 		$message = 'Success';
 		echo '0'.','.$message;

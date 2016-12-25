@@ -8,7 +8,7 @@ try{
 	error_log($selectSql);
 	$data = $pdo->query($selectSql);
 	$dataFetch = $data->fetch();
-	echo $dataFetch['price'].",".$dataFetch['url'];
+	echo $dataFetch['price'].",".$dataFetch['url'].",".$order['menu'];
 }catch(PDOException $e){
 	header('Content-Type: text/plain; charset=UTF-8', true, 500);
 	exit($e->getMessage());

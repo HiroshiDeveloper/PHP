@@ -28,7 +28,7 @@ body{
 }
 
 .marginBottom{
-	margin-bottom:5px;
+	margin-bottom: 5px;
 }
 
 .hidden{
@@ -37,7 +37,7 @@ body{
 
 /* navi */
 .navi{
-	height:50px;
+	height: 50px;
 	background-color: rgba(0, 0, 0, 0.9);
 }
 
@@ -63,7 +63,7 @@ body{
 
 .list li {
 	margin: 10px;
-	padding:3px;
+	padding: 3px;
 	float: right;
 	font-size: 15px;
 }
@@ -98,8 +98,7 @@ body{
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
  	background: url("../img/header.jpg");
-    	
-	-moz-background-size:cover;
+	-moz-background-size: cover;
 	background-size: cover;
 	/*
 	background: url(img/header1.jpg);
@@ -115,32 +114,32 @@ body{
 	/*
 	visibility:hidden;
 	*/
-	display:none;
-	margin-top:5px;
-	margin-left:15px;
-	width:40%;
+	display: none;
+	margin-top: 5px;
+	margin-left: 15px;
+	width: 40%;
 }
 
 #myAccountBtn{
-	margin-bottom:5px;
-	background-color:#FC8E42;
-	border-color:#FC8E42;
+	margin-bottom: 5px;
+	background-color: #FC8E42;
+	border-color: #FC8E42;
 }
 
 #myAccountErrorMessage{
-	color:#FA1E3B;
-	font-size:20px;
+	color: #FA1E3B;
+	font-size: 20px;
 }
 
 #myAccountSuccessMessage{
-	color:#FFF;
-	font-size:30px;
+	color: #FC8E42;
+	font-size: 30px;
 }
 
 #removeIcon{
-	font-size:30px;
-	color:#FC8E42;
-	margin-bottom:5px;
+	font-size: 30px;
+	color: #FC8E42;
+	margin-bottom: 5px;
 }
 
 /* featured product */
@@ -228,24 +227,24 @@ body{
 .display #arrowLeft{
 	display: none;
 	position: absolute;
-	top: 150px;
+	top: 200px;
 	bottom: 0;
-	left: 150px;
-	font-size: 40px;
+	left: 180px;
+	font-size: 50px;
 	color: #E97423;
 }
 
 .display #arrowRight{
 	display: none;
 	position: absolute;
-	top: 150px;
+	top: 200px;
 	bottom: 0;
-	right: 150px;
-	font-size: 40px;
+	right: 180px;
+	font-size: 50px;
 	color: #E97423;
 }
 
-.display #price{
+.display #foodName{
 	display: none;
 	font-size: 50px;
 	color: #E97423;
@@ -253,11 +252,19 @@ body{
 	top: 50px;
 	left: 10px;
 }
+.display #price{
+	display: none;
+	font-size: 50px;
+	color: #E97423;
+	position: absolute;
+	top: 120px;
+	left: 10px;
+}
 
 .display #food{
 	display: none;
 	position: absolute;
-	top: 0;
+	top: 100px;
 	left: 0;
 	right: 0;
 	bottom: 0;
@@ -270,9 +277,10 @@ body{
 	position: absolute;
 	left: 0;
 	bottom: 0;
-	height: 100px;
-	width: 150px;
+	height: 200px;
+	width: 300px;
 	z-index: -1;
+	opacity: 0.6;
 }
 
 .display #humburger{
@@ -280,6 +288,7 @@ body{
     	right: 0;
     	bottom: 0;
 	z-index: -1;
+	opacity: 0.6;
 }
 
 #tableMenu{
@@ -366,17 +375,27 @@ body{
 
 	.display #arrowLeft{
 		position: absolute;
-	        top: 150px;
+	        top: 200px;
 	 	bottom: 0;
-		left: 100px;
+		left: 70px;
 	}
 
 
 	.display #arrowRight{
 		position: absolute;
-	        top: 150px;
+	        top: 200px;
 	 	bottom: 0;
-		right: 100px;
+		right: 70px;
+	}
+
+	.display #foodName{
+		font-size: 40px;
+		top: 40px;
+	}
+
+	.display #price{
+		font-size: 40px;
+		top: 100px;
 	}
 }
 
@@ -437,8 +456,13 @@ body{
 		right: 10px;
 	}
 
+	.display #foodName{
+		font-size: 30px;
+	}
+
 	.display #price{
-		font-size: 40px;
+		font-size: 30px;
+		top: 80px;
 	}
 
 	.display #food{
@@ -446,6 +470,10 @@ body{
 		height: 250px;
 	}
 
+	.display #lettuce{
+		height: 160px;
+		width: 240px;
+	}
 
 	.display #humburger{
 		display: none;		

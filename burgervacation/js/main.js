@@ -17,6 +17,7 @@ function display(num){
 function tableMenuShow(){
 	$("#price").fadeOut("slow");
 	$("#food").fadeOut("slow");
+	$("#foodName").fadeOut("slow");
 	$("#arrowLeft").fadeOut("slow");
 	$("#arrowRight").fadeOut("slow");
 	$("#tableMenu").fadeIn("slow");
@@ -120,6 +121,7 @@ $(document).ready(function(){
 			}else{
 				document.getElementById("signUpErrorMessage").innerHTML="";
 				document.getElementById("signUpSuccessMessage").innerHTML=dt[1];
+				window.location.href = "myPage.html";
 			}
 		} );
     		return false;
@@ -132,8 +134,8 @@ $(document).ready(function(){
 				document.getElementById("myAccountSuccessMessage").innerHTML="";
 				document.getElementById("myAccountErrorMessage").innerHTML=dt[1];
 			}else{
-				//document.getElementById("myAccountErrorMessage").innerHTML="";
-				//document.getElementById("myAccountSuccessMessage").innerHTML=dt[1];
+				document.getElementById("myAccountErrorMessage").innerHTML="";
+				document.getElementById("myAccountSuccessMessage").innerHTML="";
 				window.location.href = "myPage.html";
 			}
 		} );
@@ -147,10 +149,12 @@ $(document).ready(function(){
 			if(dt.length > 0){
 				document.getElementById("price").innerHTML="$"+dt[0];
 				document.getElementById("food").src=dt[1];
+				document.getElementById("foodName").innerHTML=dt[2];
 				$("#arrowLeft").fadeIn("slow");
 				$("#arrowRight").fadeIn("slow");
 				$("#price").fadeIn("slow");
 				$("#food").fadeIn("slow");
+				$("#foodName").fadeIn("slow");
 			}
 		});
 		return false;
