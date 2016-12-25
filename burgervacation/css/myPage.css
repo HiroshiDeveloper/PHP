@@ -28,16 +28,38 @@
 	color: #FFF;
 	background-color: rgba(0,0,0,0.7);
 }
+
 .userInfo{
 	font-size: 20px;
 }
 
-.orange{
+.rewardInfo h3, h4{
+	text-align: center;
 	color: #FC8E42;
 }
 
-.test{
-	height: 500px;
+.rewardInfo p{
+	text-align: center;
+}
+
+.rewardInfo h2{
+	margin-left: 20px;
+}
+
+.rewardInfo img{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	height: 96px;
+	width: 96px;
+}
+
+.rewardInfo p{
+	font-size: 15px;
+}
+
+.orange{
+	color: #FC8E42;
 }
 
 @media only screen and (max-width: 768px){

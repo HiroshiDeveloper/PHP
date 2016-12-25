@@ -78,7 +78,7 @@ if($flg == 0){
 		$stmtStars->execute();
 
 		//insert data into userCard table
-		$money = "5.00";
+		$money = "0.00";
 		$digits = 3;
 		$code = '';
 		for ($i = 0; $i < $digits; $i++) {

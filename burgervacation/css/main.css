@@ -42,18 +42,6 @@ body{
 }
 
 /* header */
-/*
-.bgHeader{
-	background-color: #E97423;
-	border-radius: 0.5em;	
-}
-*/
-/*
-.bgHeader{
-	background-color: rgba(0, 0, 0, 0.9);
-}
-*/
-
 .list {
 	list-style: none;
 	margin: 0;
@@ -100,10 +88,6 @@ body{
  	background: url("../img/header.jpg");
 	-moz-background-size: cover;
 	background-size: cover;
-	/*
-	background: url(img/header1.jpg);
-	background-size: 100% auto;
-	*/
 }
 
 .header_content{
@@ -111,9 +95,6 @@ body{
 }
 
 #account{
-	/*
-	visibility:hidden;
-	*/
 	display: none;
 	margin-top: 5px;
 	margin-left: 15px;
@@ -144,8 +125,6 @@ body{
 
 /* featured product */
 .featuredProduct{
-	/*width:320px;*/
-	/*width: 100%;*/
 	background-color: rgba(0, 0, 0, 0.9);
 }
 
@@ -159,11 +138,6 @@ body{
 	font-weight: 800;
 	margin-left: 50px;
 }
-
-/*.header{
-	background-image: url("img/bacon.jpg");
-	background-size:40% auto;
-}*/
 
 .fpTable{
 	margin-bottom: 0px;
