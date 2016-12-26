@@ -1,4 +1,4 @@
-var burgers = ['Cheese', 'Double', 'Triple', 'MashHam', 'Shrimp', 'Steak'];
+var burgers = ['Cheese', 'Triple', 'MashHam', 'Shrimp', 'Steak'];
 var fries = ['Poutine', 'Onion', 'Normal'];
 var drinks = ['Coke', 'Coffee', 'Milk'];
 var salad = ['Avocado', 'Caeser'];

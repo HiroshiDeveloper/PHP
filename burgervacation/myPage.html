@@ -22,19 +22,17 @@
 		</ul>
 	</div>
 	<div class="mpHeader">
-		<div class="header_content">
-			<div class="mpLogo">
-				<img src="img/logo.png" class="img-rounded logo" alt="BurgerVacation Logo">
-			</div>
-			<div class="mpIntro">
-				<h1 class="myName">Hi, 
-					<?php
-						session_start();
-						$userName = $_SESSION['user'];
-		    				echo $userName;
-					?>
-				</h1>
-			</div>
+		<div class="mpLogo">
+			<img src="img/logo.png" class="img-rounded logo" alt="BurgerVacation Logo">
+		</div>
+		<div class="mpIntro">
+			<h1 class="myName">Hi, 
+				<?php
+					session_start();
+					$userName = $_SESSION['user'];
+	   				echo $userName;
+				?>
+			</h1>
 		</div>
 	</div><br/>
 	<div class="container">

@@ -129,6 +129,7 @@ body{
 }
 
 #fp_burgerName{
+	color: #FC8E42;
 	font-weight: 800;
 	margin-left: 10px;
 }
@@ -137,14 +138,11 @@ body{
 	color: #FFF;
 	font-weight: 800;
 	margin-left: 50px;
+	font-size: 20px;
 }
 
 .fpTable{
 	margin-bottom: 0px;
-}
-
-#fpExp{
-	border: none;
 }
 
 #fpExp{
@@ -159,14 +157,6 @@ body{
 .fp_margin{
 	margin-right: 0px;
 	margin-left: 0px;
-}
-
-#fp_burgerName{
-	color: #FC8E42;
-}
-
-#fp_burgerEXP{
-	color: #FFF;
 }
 
 #show1{
@@ -341,6 +331,67 @@ body{
 	padding: 10px;
 }
 
+@media only screen and (min-width: 1200px){
+	.logo{
+		width: 250px;
+		height: 125px;
+	}
+	
+	.header{
+		height: 450px;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+		background: url("../img/headerBig.jpg");
+		-moz-background-size: cover;
+		background-size: cover;
+	}
+
+	#fp_burgerExp{
+		font-size: 25px;
+	}
+	
+	.display{
+		height: 400px;
+		position: relative;
+	}
+
+	.display #arrowLeft{
+		position: absolute;
+		top: 200px;
+		bottom: 0;
+		left: 350px;
+	}
+
+	.display #arrowRight{
+		position: absolute;
+		top: 200px;
+		bottom: 0;
+		right: 350px;
+	}
+	
+	#show1, #show2{
+		width: 400px;
+		height: 300px;
+	}
+
+	.display #food{
+		height: 350px;
+		width: 350px;
+	}
+
+	.display #lettuce{
+		left: 150px;
+	}
+
+	.display #humburger{
+		right: 150px;				
+	}
+
+	#tableMenu caption, th, td{
+		font-size: 20px;
+	}
+}
+
 @media only screen and (max-width: 768px){
 	.logo{
 	  	width: 180px;
@@ -354,7 +405,6 @@ body{
 		left: 70px;
 	}
 
-
 	.display #arrowRight{
 		position: absolute;
 	        top: 200px;
@@ -364,7 +414,7 @@ body{
 
 	.display #foodName{
 		font-size: 40px;
-		top: 40px;
+		top: 50px;
 	}
 
 	.display #price{
@@ -396,6 +446,11 @@ body{
 
 	#account{
 		width:60%;
+	}
+
+	#fp_burgerExp{
+		margin-left: 20px;
+		font-size: 15px;
 	}
 
 	.fpTable tr{
@@ -432,11 +487,12 @@ body{
 
 	.display #foodName{
 		font-size: 30px;
+		top: 60px;
 	}
 
 	.display #price{
 		font-size: 30px;
-		top: 80px;
+		top: 100px;
 	}
 
 	.display #food{
@@ -445,17 +501,18 @@ body{
 	}
 
 	.display #lettuce{
-		height: 160px;
-		width: 240px;
+		height: 120px;
+		width: 180px;
 	}
 
 	.display #humburger{
 		display: none;		
 	}
 
+	
 	#tableMenu{
 		margin-left: 5px;
-	        width: 40%;
+	        width: 100%;
 	}
 
 }

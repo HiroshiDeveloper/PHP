@@ -67,6 +67,10 @@
 }
 
 @media only screen and (max-width: 480px){
+	.mpIntro h1{
+		margin-top: 5px;
+	}
+
 	.userInfo{
 		font-size: 15px;
 	}
