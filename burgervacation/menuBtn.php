@@ -5,7 +5,6 @@ require "../../mysql.php";
 $order = $_POST['order'];
 try{
 	$selectSql = "SELECT * FROM ".$order['genre']." WHERE name='".$order['menu']."'";
-	error_log($selectSql);
 	$data = $pdo->query($selectSql);
 	$dataFetch = $data->fetch();
 	echo $dataFetch['price'].",".$dataFetch['url'].",".$order['menu'];

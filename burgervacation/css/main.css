@@ -82,7 +82,7 @@ body{
 }
 
 .header{
-	height: 370px;
+	height: 400px;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
  	background: url("../img/header.jpg");
@@ -117,10 +117,42 @@ body{
 	font-size: 30px;
 }
 
+#accountMessage{
+	display: none;
+	background-color: rgba(0,0,0,0.6);
+	padding: 2px;
+}
+
 #removeIcon{
 	font-size: 30px;
 	color: #FC8E42;
 	margin-bottom: 5px;
+}
+
+.modal-body{
+	text-align: center;
+}
+
+#transferEmail{
+	background-color: #FC8E42;
+	border-color: #FC8E42;
+}
+
+#getEmail{
+	border:0;
+	padding:10px;
+	font-size:1.3em;
+	font-family:Arial, sans-serif;
+	color:#aaa;
+	border:solid 1px #ccc;
+	margin:0 0 20px;
+	width:300px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	-moz-box-shadow: inset 0 0 4px rgba(0,0,0,0.2);
+	-webkit-box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.2);
+	box-shadow: inner 0 0 4px rgba(0, 0, 0, 0.2);
 }
 
 /* featured product */
@@ -426,7 +458,11 @@ body{
 @media only screen and (max-width: 480px){
 	
 	.header{
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
 		background: url("../img/headerMobile.jpg");
+		-moz-background-size: cover;
+		background-size: cover;
 	}
 
 	.logo{
@@ -509,10 +545,13 @@ body{
 		display: none;		
 	}
 
-	
 	#tableMenu{
 		margin-left: 5px;
 	        width: 100%;
+	}
+
+	#getEmail{
+		width: 150px;
 	}
 
 }

@@ -12,6 +12,7 @@ function display(num){
      	else{
 		$("#account").fadeOut("slow");
 	}
+	$("#accountMessage").css('display', 'none');
 }
 
 function tableMenuShow(){
@@ -105,6 +106,11 @@ $(document).on('click', '#arrowRight', function(){
 	document.getElementById("menuBtn").click();
 });
 
+$(document).on('click', '#transferEmail', function(){
+	document.getElementById("sendEmail").value = document.getElementById("getEmail").value;
+	document.getElementById("emailBtn").click();
+});
+
 $(document).ready(function(){
 	makeList(burgers, '#burgersList', '#burgersList li');
 	makeList(fries, '#friesList', '#friesList li');
@@ -160,6 +166,21 @@ $(document).ready(function(){
 		return false;
 	});
 
+	$("#emailForm").submit(function(){
+		$.post( "emailBtn.php", $(this).serialize(), function(response){
+			var dt = response.split(",");
+			if (dt[0] == 1){
+				document.getElementById("myAccountSuccessMessage").innerHTML="";
+				document.getElementById("myAccountErrorMessage").innerHTML=dt[1];
+			}else{
+				document.getElementById("myAccountErrorMessage").innerHTML="";
+				document.getElementById("myAccountSuccessMessage").innerHTML=dt[1];
+			}
+			$("#accountMessage").css('display', 'block');
+			$('#myModal').modal('hide');
+		});
+		return false;
+	});
 
 	$('#tableMenu td').click(function(){
 		var col = this.cellIndex;
