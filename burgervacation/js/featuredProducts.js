@@ -1,21 +1,21 @@
 // burger image list
 var burgerImage = new Array(	
-	"img/mashHam.png",		
+	"img/mushHam.png",		
 	"img/shrimp.png",
 	"img/steak.png"
 );
 
 // burger name list
 var burgerName = new Array(
-	"MashHam Burger",
+	"MushHam Burger",
 	"Shrimp Burger",
 	"Steak Burger"
 );
 
 var burgerExp = new Array(
-	"This is MashHam Burger! A lot of mashrooms and hams inside the burger! Let's try the seasonal burger!!",
-	"This is Shrimp Burger! The shrimps are caught in Canada. The shrimp and the creamy sauce are a vary good combination!",
-	"This is Steak Burger! American beef 100%. Let's try the burger with BBQ sauce. If you are hungy, that's perfect!"
+	"This MushHam Burger is available this season. It features 100% Canadian Ham and comes with a ton of mushrooms",
+	"This is Canada's first shrimp burger. The shrimp is 100% Canadian ingredients. A great combination of shrimp and cream sauce!",
+	"100% rib-eye beef steak! Let's try the burger with your choice of BBQ or worcestershire sauce. Great when youare really hungry!"
 )
 
 var myNowCnt = -1;	// current number of array
